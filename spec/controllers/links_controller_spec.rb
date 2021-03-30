@@ -8,7 +8,6 @@ RSpec.describe LinksController, type: :controller do
         url = "https://www.google.com/dude-where-is-my-car"
         post :create, params: { link: { original_url: url} }
         link = assigns(:link)
-        p link
     
         expect(link.original_url).to eq(url)
         expect(link.url_short_code.length).to eq(7)
