@@ -1,2 +1,4 @@
 var element = document.getElementById('url_short_code');
-element.innerHTML = "<%= @link.shortened_url%>";
+element.innerHTML = `<p class="p-3 mb-2 bg-success bg gradient text-white">
+                        <%= @link.shortened_url%>
+                    </p>`;

@@ -1,16 +1,16 @@
-<div>
-    <div>
-        <h1>welcome to our link-shortening service</h1>
-        <h3>please enter the shortening link in the form below</h3>
-    </div>
-    <div>
-        <%= form_with model: @link, remote: true do |form| %>
-            <%= form.text_field :original_url %>
-            <%= form.submit %>
-        <% end %>
-    </div>
-    <div>
-    <p id="url_short_code"></p>
+<div class="container p-5">
+    <div class="p-5">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Please enter the URL to shorten</h3>
+                <%= form_with model: @link, remote: true do |form| %>
+                    <%= form.text_field :original_url, class: "form-control" %>
+                    <%= form.submit "Generate link", class: "btn btn-primary my-2" %>
+                <% end %>
+            
+                <div id="url_short_code"></div>
+            </div>
+        </div>
     </div>
 </div>
 
