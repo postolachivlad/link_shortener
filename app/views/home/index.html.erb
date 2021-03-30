@@ -4,7 +4,7 @@
         <h3>please enter the shortening link in the form below</h3>
     </div>
     <div>
-        <%= form_with do |form| %>
+        <%= form_with model: @link, remote: true do |form| %>
             <%= form.text_field :url %>
             <%= form.submit %>
         <% end %>
