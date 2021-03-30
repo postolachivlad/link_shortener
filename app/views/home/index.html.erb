@@ -1,0 +1,14 @@
+<div>
+    <div>
+        <h1>welcome to our link-shortening service</h1>
+        <h3>please enter the shortening link in the form below</h3>
+    </div>
+    <div>
+        <%= form_with do |form| %>
+            <%= form.text_field :url %>
+            <%= form.submit %>
+        <% end %>
+    </div>
+</div>
+
+
