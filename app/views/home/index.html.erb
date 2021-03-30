@@ -5,9 +5,12 @@
     </div>
     <div>
         <%= form_with model: @link, remote: true do |form| %>
-            <%= form.text_field :url %>
+            <%= form.text_field :original_url %>
             <%= form.submit %>
         <% end %>
+    </div>
+    <div>
+    <p id="url_short_code"></p>
     </div>
 </div>
 

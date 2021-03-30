@@ -9,10 +9,14 @@ class Link < ApplicationRecord
         begin
             uri = URI.parse(original_url)
             if uri.host.nil?
-                errors.add(:url, "Invalid URL format")
+                errors.add(:original_url, "Invalid URL format")
             end
         rescue URI::InvalidURIError => e
         end
+    end
+
+    def shortened_url
+        "http://localhost:3000/#{url_short_code}"
     end
 
 end
