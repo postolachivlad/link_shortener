@@ -1,4 +1,6 @@
-var lookupCode = '<%= @link.errors.full_messages.join(". ") << "."%>';
+var lookupCode = `<p class="p-3 mb-2 bg-danger bg-gradient text-white">
+                    <%= @link.errors.full_messages.join(". ") << "."%>
+                  </p>`;
 
 var element = document.getElementById('url_short_code');
 element.innerHTML = lookupCode;
