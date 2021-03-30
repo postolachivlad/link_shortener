@@ -6,12 +6,9 @@ class Link < ApplicationRecord
 
 
     def validate_url
-        begin
-            uri = URI.parse(original_url)
-            if uri.host.nil?
-                errors.add(:original_url, "Invalid URL format")
-            end
-        rescue URI::InvalidURIError => e
+        uri = URI.parse(original_url || "")
+        if uri.host.nil?
+            errors.add(:original_url, "Invalid URL format")
         end
     end
 

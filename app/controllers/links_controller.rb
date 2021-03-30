@@ -9,6 +9,12 @@ class LinksController < ApplicationController
         @link.persisted? ? (respond_to :js) : (render 'error.js.erb')
     end
 
+    def show
+        link = Link.find_by(url_short_code: params[:url_short_code])
+        redirect_to link.original_url
+    end
+
+
     private
 
     def link_params

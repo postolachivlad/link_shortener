@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   post '/links', to: 'links#create'
+  get '/:url_short_code', to: 'links#show'
 end
